@@ -36,8 +36,4 @@ public class Pong implements IPipelineMiddleware
         
         return true;
     }
-    // test text, pressman
-    //more
-    //more!
-    //...more
 }

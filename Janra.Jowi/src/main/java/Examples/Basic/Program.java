@@ -35,6 +35,7 @@ public class Program
         IConfiguration config = server.create();
         config.setTimeout(500); //mS
         config.addMiddleware("/my/path", middleware);
+        config.addMiddleware("/rest/appliance/health-status", new Gettest());
         
         server.Start(6543, config);
     }
