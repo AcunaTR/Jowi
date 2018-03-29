@@ -39,7 +39,7 @@ public class Threadtest implements IPipelineMiddleware {
 			context.setResponseStatus(404);
 			context.setResponseBody("Wrong method");
 		}	
-		return false;
+		return true;
 	}
 
 }
