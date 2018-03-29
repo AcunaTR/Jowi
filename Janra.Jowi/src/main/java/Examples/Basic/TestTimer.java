@@ -14,8 +14,9 @@ public class TestTimer extends TimerTask implements Runnable  {
 		finished = true;
 	}
 
-	public static void main(String args[]){
+	public void main(String args[]){
 		TimerTask timertask = new TestTimer();
+		started = true;
 		
 		Timer timer = new Timer(true);
 		timer.schedule(timertask, 30*1000);

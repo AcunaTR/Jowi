@@ -39,6 +39,8 @@ public class Threadtest implements IPipelineMiddleware {
 				testTimer.setStarted(false);
 				return true;
 			} else {
+				testTimer.setFinished(false);
+				testTimer.setStarted(false);
 				context.setResponseStatus(500);
 				context.setResponseBody("Started = " + started + ", finished = " + finished );
 				return true;
