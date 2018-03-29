@@ -14,19 +14,24 @@ public class Progresstest implements IPipelineMiddleware  {
 	@Override
 	public Boolean Invoke(IContext context) {
 
+		trigger = isFailureCode();
 		
-		if ((context.Request().method() == HttpMethod.GET)&& (isFailureCode() == false)) { 
+		if ((context.Request().method() == HttpMethod.GET)&& (trigger == false)) { 
 			context.setResponseStatus(200);
 			context.addResponseHeader("Content-type", "text/plain");
 			context.setResponseBody("\"instance\": \"workingProperley\"");
 		}
-		else if ((context.Request().method() == HttpMethod.GET)&& (isFailureCode() == true))  {
+		else if ((context.Request().method() == HttpMethod.GET)&& (trigger == true))  {
 			context.setResponseStatus(503);
+			context.setResponseBody("Not working yet");
+			
 		}
 		else if (context.Request().method() != HttpMethod.GET) {
 			context.setResponseStatus(404);
+			context.setResponseBody("Wrong method");
+		} else {
+			context.setResponseStatus(500);
 		}
-
 		return true;
 	}
 	

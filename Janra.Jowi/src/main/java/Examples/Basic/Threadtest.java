@@ -24,6 +24,7 @@ public class Threadtest implements IPipelineMiddleware {
 				threadlauncher.launch(testTimer);
 			} else if ((testTimer.getStarted() == true) && (testTimer.getFinished() ==false)) {
 				context.setResponseStatus(503);
+				context.setResponseBody("Not working yet");
 			} else if ((testTimer.getStarted() == true) && (testTimer.getFinished() ==true)) {
 				context.setResponseStatus(200);
 				context.addResponseHeader("Content-type", "text/plain");
@@ -36,8 +37,9 @@ public class Threadtest implements IPipelineMiddleware {
 		}		
 		else if (context.Request().method() != HttpMethod.GET) {
 			context.setResponseStatus(404);
+			context.setResponseBody("Wrong method");
 		}	
-		return true;
+		return false;
 	}
 
 }

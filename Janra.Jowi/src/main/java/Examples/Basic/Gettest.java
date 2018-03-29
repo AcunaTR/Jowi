@@ -16,6 +16,7 @@ public class Gettest implements IPipelineMiddleware {
 		}
 		else {
 			context.setResponseStatus(404);
+			
 		}
 		
 		return true;
