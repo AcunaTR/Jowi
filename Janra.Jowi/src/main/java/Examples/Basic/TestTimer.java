@@ -3,7 +3,7 @@ package Examples.Basic;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class TestTimer extends TimerTask implements Runnable  {
+public class TestTimer implements Runnable  {
 
 	
 	public Boolean started = false;
@@ -11,17 +11,16 @@ public class TestTimer extends TimerTask implements Runnable  {
 	
 	@Override
 	public void run() {
+		started = true;
+		try {
+			Thread.sleep(30000);
+		} catch (InterruptedException e) {
+		
+			e.printStackTrace();
+		}
 		finished = true;
 	}
 
-	public void main(String args[]){
-		TimerTask timertask = new TestTimer();
-		started = true;
-		
-		Timer timer = new Timer(true);
-		timer.schedule(timertask, 30*1000);
-	}
-	
 	public Boolean getStarted() {
 		return started;
 	}
@@ -37,16 +36,6 @@ public class TestTimer extends TimerTask implements Runnable  {
 	public void setFinished(Boolean finished) {
 		this.finished = finished;
 	}
-	
-	public void finish() {
-		
-	}
-	
-	
-	public void start() {
-		started = true;
-	}
-	
 	
 	
 }
