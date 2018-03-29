@@ -19,7 +19,7 @@ public class Gettest implements IPipelineMiddleware {
 			
 		}
 		
-		return true;
+		return false;
 	}
 
 }

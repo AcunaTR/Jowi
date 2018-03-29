@@ -14,18 +14,22 @@ public class Threadtest implements IPipelineMiddleware {
 	@Override
 	public Boolean Invoke(IContext context) {
 		
+		Boolean started = testTimer.getStarted();
+		Boolean finished = testTimer.getFinished();
 		
 		if (context.Request().method() == HttpMethod.GET) {
 			ThreadLauncher threadlauncher = new ThreadLauncher(1);
+			
+			
 		
 		
-			if ((testTimer.getStarted() == false) && (testTimer.getFinished() ==false)) {
+			if ((started == false) && (finished ==false)) {
 				context.setResponseStatus(503);
 				threadlauncher.launch(testTimer);
-			} else if ((testTimer.getStarted() == true) && (testTimer.getFinished() ==false)) {
+			} else if ((started == true) && (finished ==false)) {
 				context.setResponseStatus(503);
 				context.setResponseBody("Not working yet");
-			} else if ((testTimer.getStarted() == true) && (testTimer.getFinished() ==true)) {
+			} else if ((started == true) && (finished ==true)) {
 				context.setResponseStatus(200);
 				context.addResponseHeader("Content-type", "text/plain");
 				context.setResponseBody("\"instance\": \"workingProperley\"");
@@ -33,11 +37,12 @@ public class Threadtest implements IPipelineMiddleware {
 				testTimer.setStarted(false);
 			} else {
 				context.setResponseStatus(500);
+				context.setResponseBody("Started = " + started + ", finished = " + finished );
 			}
 		}		
-		else if (context.Request().method() != HttpMethod.GET) {
+		else {
 			context.setResponseStatus(404);
-			context.setResponseBody("Wrong method");
+			context.setResponseBody("Wrong method " + context.Request().method().toString()+ ", Started = \" + started + \", finished = \" + finished");
 		}	
 		return true;
 	}

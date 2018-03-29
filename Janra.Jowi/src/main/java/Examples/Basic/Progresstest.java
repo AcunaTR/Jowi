@@ -32,13 +32,13 @@ public class Progresstest implements IPipelineMiddleware  {
 		} else {
 			context.setResponseStatus(500);
 		}
-		return true;
+		return false;
 	}
 	
 	private Boolean isFailureCode() {
 		long time = System.currentTimeMillis();
-		long rem = time % 3600000;
-		if (rem <= 3000000) {
+		long rem = time % 120000;
+		if (rem >= 70000) {
 			return true;
 		} else {
 			return false;

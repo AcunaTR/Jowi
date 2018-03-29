@@ -36,8 +36,8 @@ public class Program
         config.setTimeout(500); //mS
         config.addMiddleware("/my/path", middleware);
         config.addMiddleware("/rest/appliance/health-status", new Gettest());
-        config.addMiddleware("/rest/appliance/progress/timetest", new Progresstest());
-        config.addMiddleware("/rest/appliance/progress/threadtest", new Threadtest());
+        config.addMiddleware("/rest/appliance/progress/timetest", new Progresstest()); //not working yet
+        config.addMiddleware("/rest/appliance/progress/threadtest", new Threadtest()); // 500
         //try this
         
         server.Start(6543, config);
