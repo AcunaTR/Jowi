@@ -21,23 +21,28 @@ public class Threadtest implements IPipelineMiddleware {
 			ThreadLauncher threadlauncher = new ThreadLauncher(1);
 			
 			
+			
 		
 		
 			if ((started == false) && (finished ==false)) {
 				context.setResponseStatus(503);
 				threadlauncher.launch(testTimer);
+				return true;
 			} else if ((started == true) && (finished ==false)) {
 				context.setResponseStatus(503);
 				context.setResponseBody("Not working yet");
+				return true;
 			} else if ((started == true) && (finished ==true)) {
 				context.setResponseStatus(200);
 				context.addResponseHeader("Content-type", "text/plain");
 				context.setResponseBody("\"instance\": \"workingProperley\"");
 				testTimer.setFinished(false);
 				testTimer.setStarted(false);
+				return true;
 			} else {
 				context.setResponseStatus(500);
 				context.setResponseBody("Started = " + started + ", finished = " + finished );
+				return true;
 			}
 		}		
 		else {
