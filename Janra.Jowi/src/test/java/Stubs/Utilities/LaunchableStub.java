@@ -25,6 +25,7 @@ import java.util.logging.Logger;
  */
 public class LaunchableStub implements Runnable
 {
+	
     public boolean WaitForMe = true;
 
     @Override
