@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 function testFail {
     echo "Maven test failed"

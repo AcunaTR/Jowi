@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 function buildFail {
     echo "Maven build failed"
