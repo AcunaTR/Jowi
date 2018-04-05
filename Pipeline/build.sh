@@ -8,7 +8,7 @@ trap buildFail ERR
 CURDIR=`pwd`
 
 echo " Current Directory is "
-echo CURDIR
+echo ${CURDIR}
 
 docker run --rm \
            -v "${CURDIR}/:/build" \
