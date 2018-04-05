@@ -92,9 +92,10 @@ public class RequestHandlerTests
     {
         try
         {
-            WhenSelectorKeyFlagsAreSet(false, false, false);
-            _unitUnderTest = new RequestHandler(_selectorStub, _socketStub, _builder, _processor, _responder, _config.timeout(), _launcher, _config.handler());
-            assertTrue(_selectorStub._registeredForRead == 1);
+        	fail("This is intentional! " );
+          //  WhenSelectorKeyFlagsAreSet(false, false, false);
+         //   _unitUnderTest = new RequestHandler(_selectorStub, _socketStub, _builder, _processor, _responder, _config.timeout(), _launcher, _config.handler());
+         //   assertTrue(_selectorStub._registeredForRead == 1);
         }
         catch (Exception ex)
         {
