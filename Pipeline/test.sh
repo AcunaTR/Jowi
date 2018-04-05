@@ -7,6 +7,8 @@ trap testFail ERR
 
 CURDIR=`pwd`
 
+echo "this is before it runs"
+
 docker run --rm \
            -v "${CURDIR}/:/test" \
            --workdir /test/Janra.Jowi \
