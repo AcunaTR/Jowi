@@ -7,6 +7,9 @@ trap buildFail ERR
 
 CURDIR=`pwd`
 
+echo " Current Directory is "
+echo CURDIR
+
 docker run --rm \
            -v "${CURDIR}/:/build" \
            --workdir /build/Janra.Jowi \
