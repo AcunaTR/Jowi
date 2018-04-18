@@ -1,8 +1,5 @@
 package Examples.Basic;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 public class TestTimer implements Runnable  {
 
 	

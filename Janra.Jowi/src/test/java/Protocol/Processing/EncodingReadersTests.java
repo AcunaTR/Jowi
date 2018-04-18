@@ -16,7 +16,6 @@
  */
 package Protocol.Processing;
 
-import Network.Wrappers.ISocketChannel;
 import Protocol.Parsers.ProtocolException;
 import Request.Processing.EncodingReaders;
 import Stubs.Network.SocketStubBinary;

@@ -2,8 +2,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 import Network.IncomingRequestHandlerErrorTests;
-import Network.IncomingRequestHandlerTests;
-import Network.NetworkContext;
 import Network.RequestHandlerTests;
 import Network.SocketServerTests;
 import Network.Readers.ChannelReaderTests;

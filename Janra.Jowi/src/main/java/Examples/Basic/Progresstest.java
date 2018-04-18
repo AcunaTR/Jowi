@@ -1,9 +1,6 @@
 package Examples.Basic;
 
 import Protocol.Models.HttpMethod;
-import java.util.Timer;
-import java.util.TimerTask;
-
 import Server.IContext;
 import Server.IPipelineMiddleware;
 

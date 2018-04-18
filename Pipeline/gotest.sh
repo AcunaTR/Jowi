@@ -2,4 +2,4 @@
 
 pwd
 ls -l
-echo "woot"
+echo "woot, firstJob is working"
