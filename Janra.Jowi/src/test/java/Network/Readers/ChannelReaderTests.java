@@ -18,8 +18,6 @@ package Network.Readers;
 
 import Network.Readers.ChannelReader;
 import Protocol.Parsers.ProtocolException;
-import Stubs.Network.*;
-
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import static org.junit.Assert.assertTrue;

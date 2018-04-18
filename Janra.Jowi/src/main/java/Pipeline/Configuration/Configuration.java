@@ -86,7 +86,8 @@ public class Configuration implements IConfiguration
         return _maxUriLength;
     }
     
-    public String defaultCharset()
+    @Override
+	public String defaultCharset()
     {
         return _defaultCharset;
     }
