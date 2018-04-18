@@ -1,6 +1,6 @@
 #!/bin/sh
 
-function testFail{
+function testFail {
     echo "Failed as planned"
 }
 testFail ERR
