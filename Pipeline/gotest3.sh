@@ -1,6 +1,6 @@
 #!/bin/sh
 
-function testFail {
-    echo "Failed as planned"
-}
-testFail ERR
+ls -al
+
+echo "woot, goTest3 works too"
+

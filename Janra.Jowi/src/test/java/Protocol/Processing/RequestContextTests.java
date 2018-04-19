@@ -76,8 +76,9 @@ public class RequestContextTests
     {
         try
         {
+        	//testing!
             _unitUnderTest.setResponseBody("Test Body");
-            assertTrue(((ResponseImpl)_httpContext.response()).getRaw().contains("Test Body"));
+            assertTrue(((ResponseImpl)_httpContext.response()).getRaw().contains("this is a waste of time"));
         }
         catch (Exception ex)
         {
