@@ -10,7 +10,7 @@ VERSION=$(cat ./version)
 docker tag jowi:latest 015887481462.dkr.ecr.us-east-1.amazonaws.com/acuna-jowi:latest
 docker tag 015887481462.dkr.ecr.us-east-1.amazonaws.com/acuna-jowi:latest 015887481462.dkr.ecr.us-east-1.amazonaws.com/acuna-jowi:$VERSION.$BUILD_NUMBER
 $(aws ecr get-authorization-token --region us-east-1 --output text --query 'authorizationData[].authorizationToken' | base64 -d | cut -d: -f2)
-docker login -u AWS 015887481462.dkr.ecr.us-east-1.amazonaws.com
+#docker login -u AWS 015887481462.dkr.ecr.us-east-1.amazonaws.com
 docker push 015887481462.dkr.ecr.us-east-1.amazonaws.com/acuna-jowi:latest
 docker push 015887481462.dkr.ecr.us-east-1.amazonaws.com/acuna-jowi:$VERSION.$BUILD_NUMBER
 
