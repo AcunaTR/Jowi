@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 function testFail {
     echo "Maven test failed"

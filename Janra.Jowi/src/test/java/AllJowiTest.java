@@ -56,6 +56,6 @@ import Protocol.Processing.TransferEncodingProcessorTests;
 
 })
 
-public class AllJowiTestsCase {
+public class AllJowiTest {
 
 }
