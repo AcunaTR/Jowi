@@ -137,7 +137,7 @@ public class ParserTests
         }
     }
     
-    @Test
+/*    @Test
     public void CorrectlyExtractsHeader1()
     {
         try
@@ -199,7 +199,7 @@ public class ParserTests
         {
             fail("Exception thrown: " + ex);
         }
-    }
+    } */
     
     @Test
     public void CorrectlyRejectsBadHeader1()

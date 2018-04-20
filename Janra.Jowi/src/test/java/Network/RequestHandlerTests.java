@@ -95,8 +95,8 @@ public class RequestHandlerTests
 
             WhenSelectorKeyFlagsAreSet(false, false, false);
           _unitUnderTest = new RequestHandler(_selectorStub, _socketStub, _builder, _processor, _responder, _config.timeout(), _launcher, _config.handler());
-            //assertTrue(_selectorStub._registeredForRead == 1);
-            assertTrue(_selectorStub._registeredForRead == 28);
+            assertTrue(_selectorStub._registeredForRead == 1);
+           
         }
         catch (Exception ex)
         {
@@ -145,7 +145,7 @@ public class RequestHandlerTests
     {
         try
         {
-        	fail("Intentional fail! ");
+        	//fail("Intentional fail! ");
             WhenSelectorKeyFlagsAreSet(false, true, true);
             _builder.Status = 200;
             _unitUnderTest = new RequestHandler(_selectorStub, _socketStub, _builder, _processor, _responder, _config.timeout(), _launcher, _config.handler());
