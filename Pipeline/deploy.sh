@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 function deployFail {
     echo "Deploy to AWS Lambda failed"

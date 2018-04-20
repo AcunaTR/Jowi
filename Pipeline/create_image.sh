@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 function createFail {
     echo "Creation of docker image failed"
